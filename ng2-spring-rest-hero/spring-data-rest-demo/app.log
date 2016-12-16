@@ -1,0 +1,6 @@
+2016-10-14 11:52:09,284 WARN [main] o.s.w.c.RestTemplate [RestTemplate.java:559] DELETE request for "http://localhost:8080/spring-data-rest-demo/rest/hero/30" resulted in 404 (Not Found); invoking error handler
+2016-10-14 11:52:35,995 WARN [main] o.s.w.c.RestTemplate [RestTemplate.java:559] DELETE request for "http://localhost:8080/spring-data-rest-demo/rest/hero/30" resulted in 404 (Not Found); invoking error handler
+2016-10-14 11:53:54,599 WARN [main] o.s.w.c.RestTemplate [RestTemplate.java:559] DELETE request for "http://localhost:8080/spring-data-rest-demo/rest/hero/30" resulted in 404 (Not Found); invoking error handler
+2016-10-14 11:54:36,437 WARN [main] o.s.w.c.RestTemplate [RestTemplate.java:559] DELETE request for "http://localhost:8080/spring-data-rest-demo/rest/hero/30" resulted in 404 (Not Found); invoking error handler
+2016-10-14 11:55:14,624 WARN [main] o.s.w.c.RestTemplate [RestTemplate.java:559] DELETE request for "http://localhost:8080/spring-data-rest-demo/rest/hero/30" resulted in 404 (Not Found); invoking error handler
+2016-10-14 11:55:57,704 WARN [main] o.s.w.c.RestTemplate [RestTemplate.java:559] DELETE request for "http://localhost:8080/spring-data-rest-demo/rest/hero/30" resulted in 404 (Not Found); invoking error handler
