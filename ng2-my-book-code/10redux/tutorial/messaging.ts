@@ -21,3 +21,5 @@ interface DeleteMessageAction extends Action{
 interface Reducer<T> {
     (state: T, action: Action): T;
 }
+
+let reducer1:Reducer<AppState>(state:AppState,action);
