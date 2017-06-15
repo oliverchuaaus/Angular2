@@ -7,7 +7,7 @@ import 'rxjs/Rx';
   selector: 'my-app',
   template: `
   <h1>My First Angular App</h1>
-  <simple-demo></simple-demo>
+  <single-upload></single-upload>
 
 <!--  
   <single-upload></single-upload>

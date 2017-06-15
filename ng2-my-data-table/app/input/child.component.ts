@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 @Component({
+    moduleId: module.id,
     selector: 'child',
     template: `
   <h1>Child</h1>

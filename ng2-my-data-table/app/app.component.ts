@@ -4,7 +4,9 @@ import { Component } from '@angular/core';
   template: `
   <h1>My First Angular App</h1>
 
-  <route></route>
+  <parent2></parent2>
+  <router-outlet></router-outlet>
+
   
 
 <!--  

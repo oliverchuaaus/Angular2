@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 @Component({
+    moduleId: module.id,
     selector: 'parent',
     template: `
   <h1>Parent</h1>

@@ -22,7 +22,7 @@ export class MyCompoComponent{
         if (this.myConfig){
             return this.myService.method1(this.myConfig.name);    
         }
-        else{}
+        else{
             return this.myService.method1(msg);
         }
     }

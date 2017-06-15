@@ -1,13 +1,14 @@
 import { Component, Input, OnInit } from '@angular/core';
 @Component({
+    moduleId: module.id,
     selector: 'child2',
     template: `
   <h1>Child</h1>
-  {{"my-arr: "+my-arr}}
+  {{"myArr1: "+myArr1}}
 
   `,
-    inputs: ['my-arr'],
-
+    inputs: ['myArr1'],
+    //input name cannot have -
 
 })
 export class Child2Component {

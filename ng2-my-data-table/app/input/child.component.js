@@ -27,6 +27,7 @@ __decorate([
 ], ChildComponent.prototype, "myArray", void 0);
 ChildComponent = __decorate([
     core_1.Component({
+        moduleId: module.id,
         selector: 'child',
         template: "\n  <h1>Child</h1>\n  {{\"myArray: \"+myArray}}\n  ",
     }),

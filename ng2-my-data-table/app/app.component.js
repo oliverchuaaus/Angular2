@@ -14,7 +14,7 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
-        template: "\n  <h1>My First Angular App</h1>\n\n  <route></route>\n  \n\n<!--  \n  <table-demo></table-demo>\n  <mission-control></mission-control>\n\n  <parent></parent>\n  <router-outlet></router-outlet>\n\n  <parent2></parent2>\n  <router-outlet></router-outlet>\n\n-->\n  "
+        template: "\n  <h1>My First Angular App</h1>\n\n  <parent2></parent2>\n  <router-outlet></router-outlet>\n\n  \n\n<!--  \n  <table-demo></table-demo>\n  <mission-control></mission-control>\n\n  <parent></parent>\n  <router-outlet></router-outlet>\n\n  <parent2></parent2>\n  <router-outlet></router-outlet>\n\n-->\n  "
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;

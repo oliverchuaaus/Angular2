@@ -14,6 +14,7 @@ var ParentComponent = (function () {
 }());
 ParentComponent = __decorate([
     core_1.Component({
+        moduleId: module.id,
         selector: 'parent',
         template: "\n  <h1>Parent</h1>\n  <child [my-arr]=\"myArr\"></child>\n  "
     })

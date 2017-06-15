@@ -16,9 +16,10 @@ var Child2Component = (function () {
 }());
 Child2Component = __decorate([
     core_1.Component({
+        moduleId: module.id,
         selector: 'child2',
-        template: "\n  <h1>Child</h1>\n  {{\"my-arr: \"+my-arr}}\n\n  ",
-        inputs: ['my-arr'],
+        template: "\n  <h1>Child</h1>\n  {{\"myArr1: \"+myArr1}}\n\n  ",
+        inputs: ['myArr1'],
     }),
     __metadata("design:paramtypes", [])
 ], Child2Component);

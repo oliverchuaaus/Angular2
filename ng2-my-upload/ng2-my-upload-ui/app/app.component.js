@@ -15,7 +15,7 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
-        template: "\n  <h1>My First Angular App</h1>\n  <simple-demo></simple-demo>\n\n<!--  \n  <single-upload></single-upload>\n  <multipart-upload></multipart-upload>\n  <simple-demo></simple-demo>\n-->  \n  "
+        template: "\n  <h1>My First Angular App</h1>\n  <single-upload></single-upload>\n\n<!--  \n  <single-upload></single-upload>\n  <multipart-upload></multipart-upload>\n  <simple-demo></simple-demo>\n-->  \n  "
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;
