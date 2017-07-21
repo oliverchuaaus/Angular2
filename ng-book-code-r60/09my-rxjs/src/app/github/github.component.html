@@ -1,0 +1,33 @@
+<!--
+<div class="container">
+    <div class="header">
+         <h2>Who to follow</h2><a href="#" class="refresh" #refButton>Refresh</a>
+    </div>
+    <ul class="suggestions">
+        <li class="suggestion1">
+            <img />
+            <a href="#" target="_blank" class="username">this will not be displayed</a>
+            <a href="#" class="close close1" #closeButton1>x</a>
+        </li>
+        <li class="suggestion2">
+            <img />
+            <a href="#" target="_blank" class="username">neither this</a>
+            <a href="#" class="close close2" #closeButton2>x</a>
+        </li>
+        <li class="suggestion3">
+            <img />
+            <a href="#" target="_blank" class="username">nor this</a>
+            <a href="#" class="close close3" #closeButton3>x</a>
+        </li>
+    </ul>
+</div>
+-->
+
+Git Follow HTML<br/><br/>
+
+<button [disabled]="disableButtons" (click)="refreshClickObs.next($event)">Refresh</button>
+<ul>
+  <li *ngFor="let user of userListShow; let i = index;">
+    <span>{{user.login}}</span><button [disabled]="disableButtons" (click)="clearUserClickObs.next(i)">x</button>
+  </li>
+</ul>

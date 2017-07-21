@@ -1,0 +1,143 @@
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Subject, Observable } from 'rxjs';
+
+@Component({
+  selector: 'app-github',
+  templateUrl: './github.component.html',
+  styleUrls: ['./github.component.css']
+})
+export class GithubComponent implements OnInit {
+  @ViewChild('refButton') refreshButton: ElementRef;
+  @ViewChild('closeButton1') closeButton1: ElementRef;
+  @ViewChild('closeButton2') closeButton2: ElementRef;
+  @ViewChild('closeButton3') closeButton3: ElementRef;
+
+  refreshClickStream: Observable<any>;
+  close1ClickStream: Observable<any>;
+  close2ClickStream: Observable<any>;
+  close3ClickStream: Observable<any>;
+
+  requestStream: Observable<any>;
+  responseStream: Observable<any>;
+
+  suggestion1Stream;
+  suggestion2Stream;
+  suggestion3Stream;
+
+  constructor() { }
+
+  ngOnInit() {
+
+    //var obs = Observable.interval(100).take(5);
+    //obs.subscribe((num)=>{console.log(num)});
+
+    /*
+        let obs = Observable.interval(100).take(5).do(num => console.log(num));
+        obs.subscribe();
+        obs.subscribe();
+    */
+
+
+    let obs = Observable.interval(100).take(5);
+    console.log('obs: %O', obs);
+    obs.subscribe(num => console.log("obs1: " + num));
+    obs.subscribe(num => console.log("obs2: " + num));
+
+    //map
+    let mapObs = obs.map(num => 2 * num);
+    mapObs.subscribe(num => console.log("mapObs: " + num));
+    //flatMap
+    let nestedObs = Observable.interval(100).take(5).map(num => Observable.of(2 * num));
+    console.log('nestedObs: %O', nestedObs);
+    let flatMapObs = nestedObs.flatMap(nestedObs => nestedObs);
+    flatMapObs.subscribe(num => console.log("flatMapObs: " + num));
+    
+    //filter
+    let filterObs = obs.filter(num => num > 2);
+    filterObs.subscribe(num => console.log("filterObs: " + num));
+
+    //reduce
+    let reduceObs = obs.reduce((total, num) => total = total + num);
+    reduceObs.subscribe(num => console.log("reduceObs: " + num));
+
+    //scan
+    let scanObs = obs.scan((total, num) => total = total + num);
+    scanObs.subscribe(num => console.log("scanObs: " + num));
+
+    //share
+    let shareObs = Observable.interval(1000).take(5).do(num => console.log("shareObs: " + num)).share();
+    shareObs.subscribe(num => console.log("shareObs1: " + num));
+    shareObs.subscribe(num => console.log("shareObs2: " + num));
+
+
+
+
+    this.refreshClickStream = Observable.fromEvent(this.refreshButton.nativeElement, 'click');
+    this.close1ClickStream = Observable.fromEvent(this.closeButton1.nativeElement, 'click');
+    this.close2ClickStream = Observable.fromEvent(this.closeButton2.nativeElement, 'click');
+    this.close3ClickStream = Observable.fromEvent(this.closeButton3.nativeElement, 'click');
+
+    /*
+        let requestStream = this.refreshClickStream.startWith('startup click').map(function () {
+          console.log('in requestStream');
+          return 'https://api.github.com/users?since=' + this.randomOffset();
+        });
+    
+        let responseStream = requestStream.flatMap(function (requestUrl) {
+          console.log('in responseStream');
+          return this.http.get(requestUrl);
+        });
+    
+        this.suggestion1Stream = this.createSuggestionStream(this.close1ClickStream);
+        this.suggestion2Stream = this.createSuggestionStream(this.close2ClickStream);
+        this.suggestion3Stream = this.createSuggestionStream(this.close3ClickStream);
+    
+        this.suggestion1Stream.subscribe(function (suggestedUser) {
+          //this.renderSuggestion(suggestedUser, '.suggestion1');
+        });
+        this.suggestion2Stream.subscribe(function (suggestedUser) {
+          //this.renderSuggestion(suggestedUser, '.suggestion2');
+        });
+        this.suggestion3Stream.subscribe(function (suggestedUser) {
+          //this.renderSuggestion(suggestedUser, '.suggestion3');
+        });
+    */
+
+  }
+
+  randomOffset() {
+    return Math.floor(Math.random() * 500);
+  }
+
+
+  createSuggestionStream(closeClickStream) {
+    return closeClickStream.startWith('startup click')
+      .combineLatest(this.responseStream,
+      function (click, listUsers) {
+        return listUsers[Math.floor(Math.random() * listUsers.length)];
+      }
+      )
+      .merge(
+      this.refreshClickStream.map(function () {
+        return null;
+      })
+      )
+      .startWith(null);
+  }
+
+  renderSuggestion(suggestedUser, selector) {
+    var suggestionEl = document.querySelector(selector);
+    if (suggestedUser === null) {
+      suggestionEl.style.visibility = 'hidden';
+    } else {
+      suggestionEl.style.visibility = 'visible';
+      var usernameEl = suggestionEl.querySelector('.username');
+      usernameEl.attributes['href'] = suggestedUser.html_url;
+      usernameEl.textContent = suggestedUser.login;
+      var imgEl = suggestionEl.querySelector('img');
+      imgEl.src = "";
+      imgEl.src = suggestedUser.avatar_url;
+    }
+  }
+
+}

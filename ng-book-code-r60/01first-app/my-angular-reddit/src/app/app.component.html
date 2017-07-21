@@ -1,0 +1,17 @@
+<form>
+Add a Link
+
+Title
+<input #title />
+Link
+<input #link/>
+
+<button (click)="addArticle(title,link)">Submit Link</button>
+
+</form>
+
+<ul>
+    <li *ngFor="let article of sortedArticles()">
+        <app-article [article]=article></app-article>
+    </li>
+</ul>

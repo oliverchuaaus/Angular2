@@ -1,0 +1,16 @@
+<div *ngIf="person">
+<form [formGroup]="personForm" (ngSubmit)="submitForm(myForm)">
+
+	<div>
+		SKU : <input formControlName="name">
+	</div>
+
+	<div> 
+		<app-address-list [addresses]="person.addresses" [personForm]="personForm"></app-address-list>
+		
+	</div>
+
+	<button type="submit">Submit</button>
+</form>
+
+</div>

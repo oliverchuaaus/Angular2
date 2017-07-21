@@ -1,0 +1,22 @@
+<form [formGroup]="myForm" (ngSubmit)="submitForm(myForm)">
+
+	<div>
+		SKU : <input formControlName="sku">
+	</div>
+
+	<div formArrayName="addresses">
+		Address:
+		<div *ngFor="let addressControl of myForm.controls['addresses'].controls; let i=index">
+			<app-address [arrayGroup]="addressControl"></app-address>
+      <!--
+      <div [formGroup]="address">
+				<input formControlName="street">
+				<input formControlName="postcode">
+			</div>
+      -->
+
+		</div>
+	</div>
+
+	<button type="submit">Submit</button>
+</form>

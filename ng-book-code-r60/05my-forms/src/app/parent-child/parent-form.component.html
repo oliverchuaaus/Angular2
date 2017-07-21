@@ -1,0 +1,36 @@
+<h2>
+    Parent Form
+</h2>
+
+<form class="parent-form"
+      [formGroup]="parentForm"
+      (ngSubmit)="onSubmit()">
+
+    <div>
+        <label for="parentField1">Parent Field 1</label>
+        <input formControlName="parentField1" />
+    </div>
+
+    <div>
+        <label for="parentField2">Parent Field 2</label>
+        <input formControlName="parentField2" />
+    </div>
+
+    <app-child-list
+        [parentForm]="parentForm"
+        [children]="parentData.children">
+    </app-child-list>
+
+    <button type="submit" [disabled]="!parentForm.valid">
+        Submit
+    </button>
+
+</form>
+
+<div class="parent-form-state">
+
+    <p>Current parentForm State:</p>
+
+    <pre>{{ parentData | json }}</pre>
+
+</div>

@@ -1,0 +1,9 @@
+<form [formGroup]="myForm" (ngSubmit)="submitForm(myForm)">
+SKU
+  <!--
+  <input [formControl]="myForm.controls['sku']" >
+  //old way
+  -->
+  <input formControlName="sku" >
+<button type="submit">Submit</button>
+</form>  
