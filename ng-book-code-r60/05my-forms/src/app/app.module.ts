@@ -12,6 +12,8 @@ import { AddressComponent } from './poc-collection/address.component';
 
 import { PersonService } from './poc-collection/person.service';
 import { PocCollectionDataDrivenComponent } from './poc-collection-data-driven/poc-collection-data-driven.component';
+import { PersonDataDrivenService } from './poc-collection-data-driven/person-data-driven.service';
+
 import { AddressListComponent } from './poc-collection-data-driven/address-list.component';
 
 import { ParentChildComponent } from './parent-child/parent-child.component';
@@ -33,7 +35,7 @@ import { NestedFormComponent, ParentFormComponent, ChildListComponent, ChildForm
   imports: [
     BrowserModule, FormsModule, ReactiveFormsModule, HttpModule
   ],
-  providers: [PersonService],
+  providers: [PersonService, PersonDataDrivenService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

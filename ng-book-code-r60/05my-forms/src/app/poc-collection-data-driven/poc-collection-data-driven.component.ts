@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder, FormArray } from '@angular/forms';
-import { PersonService } from '../poc-collection/person.service';
+import { PersonDataDrivenService } from '../poc-collection-data-driven/person-data-driven.service';
 import { Person } from '../poc-collection/person.model';
 
 @Component({
@@ -11,7 +11,7 @@ export class PocCollectionDataDrivenComponent implements OnInit {
   personForm: FormGroup;
   person: Person;
 
-  constructor(private formBuilder: FormBuilder, private personService: PersonService) {
+  constructor(private formBuilder: FormBuilder, private personService: PersonDataDrivenService) {
     this.personService.getJson().subscribe(data => {
       console.log(data);
       this.person = data;

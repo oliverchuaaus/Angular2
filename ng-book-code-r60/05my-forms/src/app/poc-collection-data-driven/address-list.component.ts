@@ -9,14 +9,22 @@ import { Address } from '../poc-collection/address.model';
     templateUrl: './address-list.component.html'
 })
 export class AddressListComponent implements OnInit {
-    @Input() 
-    addresses:Array<Address>;
+    @Input() addresses:Array<Address>;
     
     @Input() personForm:FormGroup;
-    constructor() { }
+    constructor(private formBuilder: FormBuilder) { }
 
     ngOnInit() {
         this.personForm.addControl('addresses', new FormArray([]));
+        this.addresses.forEach(address => {
+        let newGroup = this.formBuilder.group({
+          street: [address.street],
+          postcode: [address.postcode]
+        });
+        const arrayControl = <FormArray>this.personForm.controls['addresses'];
+        arrayControl.push(newGroup);
+      });
+
     }
 
 }
