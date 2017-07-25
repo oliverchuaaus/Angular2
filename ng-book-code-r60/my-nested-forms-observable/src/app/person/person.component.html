@@ -1,12 +1,15 @@
 <div *ngIf="this.person">
+	
 <form [formGroup]="personFormGroup" novalidate (ngSubmit)="onSubmit()">
 	Person:
 
 	<div>
 		Name: <input formControlName="name" />
 	</div>
-	
-	<app-address-list [personFormGroup]="personFormGroup" [addresses]="person.addresses"></app-address-list>
+
+	<div *ngFor="let address of person.addresses">
+  		<app-address [addressesFormArray]="personFormGroup.controls.addresses" [address]="address"></app-address>       
+	</div>  
 
 	<button type="Submit">Submit</button>
 </form>

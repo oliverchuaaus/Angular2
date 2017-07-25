@@ -12,10 +12,11 @@ export class AddressComponent implements OnInit {
   @Input() address:Address;
   addressFormGroup:FormGroup;
 
-  constructor(public formBuilder:FormBuilder) { }
+  constructor(public formBuilder:FormBuilder) {
+    console.log('inside constructor');
+   }
 
   ngOnInit() {
-    console.log('inside init');
     this.addressFormGroup = this.formBuilder.group({
         street:this.address.street,
         postcode:this.address.postcode

@@ -9,7 +9,7 @@ export class PersonService {
 
   public getEmployeeAssessment(employeeAssessmentId: string): Observable<any> {
     return this.http.get("../assets/json/dummy.json")
-      .map((res: any) => res.json()).delay(10000);
+      .map((res: any) => res.json()).delay(3000);
   }
 
 }
