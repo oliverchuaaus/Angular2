@@ -1,0 +1,19 @@
+<div [formGroup]="assessmentRatingFormGroup">
+	<div class="rating"><label for="rating">Rating </label>
+		<input class="numeric" id="{{assessmentRating.assessmentRatingId}}rating" formControlName="assessmentRating" size="3" /></div>
+	<br>
+	<br>
+
+	<accordion>
+		<accordion-group *ngFor="let action of assessmentRating.actions; let assessmentRatingIndex=index" [heading]="[(assessmentIndex+1)+'.'+(assessmentRatingIndex+1)+' '+action.actionDescription]"
+			[isOpen]="openAccordion()">
+
+			<app-action [action]="action" [actionsFormArray]="assessmentRatingFormGroup.controls.actions"></app-action>
+		</accordion-group>
+
+		<br>
+		<div class="form-group">
+			<label for="{{assessmentRating.assessmentRatingId}}Comment">Comments:</label>
+			<div class="value"><textarea class="form-control comment" rows="2" id="{{assessmentRating.assessmentRatingId}}Comment" formControlName="assessmentRatingComment"></textarea></div>
+		</div>
+	</accordion>

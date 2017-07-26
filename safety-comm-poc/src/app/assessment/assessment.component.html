@@ -1,0 +1,9 @@
+<accordion [formGroup]="assessmentFormGroup">
+	<accordion-group *ngFor="let assessmentRating of assessment.assessmentRatings; let assessmentIndex=index" [heading]="[(assessmentIndex+1) +'. '+assessment.assessmentDescription]"
+		[isOpen]="openAccordion()">
+		<app-assessment-rating [assessmentRating]="assessmentRating" [assessmentRatingsFormArray]="assessmentFormGroup.controls.assessmentRatings"
+			[assessmentIndex]="assessmentIndex"></app-assessment-rating>
+	</accordion-group>
+</accordion>
+
+<app-manager-evaluation [managerEvaluation]="assessment.managerEvaluation" [assessmentFormGroup]="assessmentFormGroup"></app-manager-evaluation>

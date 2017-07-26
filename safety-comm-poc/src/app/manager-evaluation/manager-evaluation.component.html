@@ -1,0 +1,41 @@
+<br>
+
+<div class="eval" [formGroup]="managerEvaluationFormGroup">
+
+	<div class="row">
+		<div class="col-md-12">
+			<h4>Manager's Evaluation</h4>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-12 form-group">
+			<label>Additional Comments:</label>
+			<div class="value"><textarea class="form-control" formControlName="additionalComments" ></textarea></div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-12 form-group">
+			<label> Goals (as agreed upon by employee and manager)</label>
+			<div class="value"><textarea class="form-control" formControlName="goals"></textarea></div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-6">
+			<label for="managerName">Manager's Name</label>
+			<input id="managerName" formControlName="managerName" class="form-control"/>
+		</div>
+		<div class="col-md-6">
+			<label for="evaluationDate">Date</label>
+			<div class=""> 
+				<!--
+    			<input id="evaluationDate" formControlName="evaluationDate" class="form-control"/>
+				-->
+				<datepicker id="evaluationDate" formControlName="evaluationDate" [showWeeks]="false"></datepicker>
+			</div>
+		</div>
+	</div>
+
+</div>

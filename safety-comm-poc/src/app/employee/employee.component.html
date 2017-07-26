@@ -1,0 +1,33 @@
+<div class="row">
+	<div class="col-md-6">
+		<div>
+			<div class="field">Employee Name:</div>
+			<div class="value">{{employee.employeeName}}</div>
+		</div>
+		<div>
+			<span class="field">Job Title:</span>
+			<span class="value">{{employee.jobTitle}}</span>
+		</div>
+		<div>
+			<span class="field">Panel / Board:</span>
+			<span class="value">{{employee.panelOrBoard}}</span>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<div>
+			<span class="field">Assessment Id Number:</span>
+			<span class="value">{{employeeAssessment.assessmentIdNumber}}</span>
+		</div>
+		<div>
+			<span class="field">Date Assessment Requested:</span>
+			<span class="value">{{employeeAssessment.dateAssessmentRequested|date : "dd MMMM yyyy"}}</span>
+		</div>
+		<div>
+			<span class="field">Date Assessment Completed:</span>
+			<span class="value">{{employeeAssessment.dateAssessmentCompleted|date : "dd MMMM yyyy"}}</span>
+		</div>
+		<div>
+			<span class="field">Requester Name:</span>
+			<span class="value">{{employeeAssessment.requesterName}}</span>
+		</div>
+	</div>

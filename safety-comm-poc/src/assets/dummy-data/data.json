@@ -1,0 +1,85 @@
+{
+    "assessmentType": "ASB",
+    "overallRating": "98",
+    "attachedAudio": null,
+    "managerEvaluation": {
+        "managerName": "Sansa Stark",
+        "evaluationDate": "2017-06-09",
+        "evaluationComments": "evaluation comment",
+        "goals": "evaluation goals"
+    },
+    "assessmentRatings": [
+        {
+            "assessmentRatingId": "ASB.1",
+            "assessmentRating": "88%",
+            "assessmentRatingComments": "assessment rating 1 comment",
+            "actions": [
+                {
+                    "actionId": "ASB.1.1",
+                    "actionComments": "action 1.1 comment",
+                    "actionDetails": [
+                        {
+                            "actionDetailId": "ASB.1.1.a",
+                            "actionDetailChoice": "N/C",
+                            "actionDetailComment": "action detail 1.1.a comment"
+                        }
+                    ]
+                },
+                {
+                    "actionId": "ASB.1.2",
+                    "action": "Confirms ASB details",
+                    "actionDetails": [
+                        {
+                            "actionDetailId": "ASB.1.2.a",
+                            "actionDetailChoice": "N/C",
+                            "actionDetailComment": "action detail 1.2.a comment"
+                        },
+                        {
+                            "actionDetailId": "ASB.1.2.b",
+                            "actionDetailChoice": "N/C",
+                            "actionDetailComment": "action detail 1.2.b comment"
+                        },
+                        {
+                            "actionDetailId": "ASB.1.2.c",
+                            "actionDetailChoice": "N/C",
+                            "actionDetailComment": "action detail 1.2.c comment"
+                        },
+                        {
+                            "actionDetailId": "ASB.1.2.d",
+                            "actionDetailChoice": "N/C",
+                            "actionDetailComment": "action detail 1.2.d comment"
+                        },
+                        {
+                            "actionDetailId": "ASB.1.2.e",
+                            "actionDetailChoice": "N/C",
+                            "actionDetailComment": "action detail 1.2.e comment"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "assessmentRatingId": "ASB.2",
+            "assessmentRating": "23%",
+            "assessmentRatingComments": "assessment rating 2 comment",
+            "actions": [
+                {
+                    "actionId": "ASB.2.1",
+                    "actionComments": "action 2.1 comment",
+                    "actionDetails": [
+                        {
+                            "actionDetailId": "ASB.2.1.a",
+                            "actionDetailChoice": "N/C",
+                            "actionDetailComment": "action detail 2.1.a comment"
+                        },
+                        {
+                            "actionDetailId": "ASB.2.1.b",
+                            "actionDetailChoice": "N/C",
+                            "actionDetailComment": "action detail 2.1.b comment"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

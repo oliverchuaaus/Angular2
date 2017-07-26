@@ -1,0 +1,19 @@
+.rating{
+	float:right;
+    clear:both;
+}
+
+.numeric{
+    text-align: right;
+    padding: 2px;
+}
+
+.field {
+    clear: both;
+    float: left;
+}    
+
+.value{
+    float: right;
+    width:90%;
+}

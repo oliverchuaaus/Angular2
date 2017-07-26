@@ -1,0 +1,171 @@
+{
+    "assessmentIdNumber": "AssessmentId",
+    "dateAssessmentRequested": "2012-04-23T18:25:43.511Z",
+    "dateAssessmentCompleted": "2012-04-23T18:25:43.511Z",
+    "requesterName": "Jack Zhu",
+    "employee": {
+        "employeeName": "Kristoffer Chua",
+        "jobTitle": "Senior Java Developer",
+        "panelOrBoard": "ERP Team"
+    },
+    "assessments": [
+        {
+            "assessmentId": "ASB",
+            "assessmentDescription": "Absolute Signal Blocking",
+            "references": [
+                "NWT 308 Absolute Signal Blocking",
+                "NPR 703 Using Absolute Signal Blocking",
+                "NRF 018 Absolute Signal Blocking (ASB)",
+                "NS0 919 Safety Critical Communication",
+                "NGE 204 Network Communication"
+            ],
+            "managerEvaluation": {
+                "managerName": "Michael Li",
+                "evaluationDate": "2012-04-23T18:25:43.511Z",
+                "additionalComments": "string",
+                "goals": "My goals"
+            },
+            "assessmentRatings": [
+                {
+                    "assessmentRatingId": "ASB.1",
+                    "assessmentRatingDescription": "Request for Absolute Signal Blocking",
+                    "assessmentRating": "99",
+                    "assessmentRatingComment": "ABS.1 Comment",
+                    "actions": [
+                        {
+                            "actionId": "ASB.1.1",
+                            "actionDescription": "Start of Communication",
+                            "actionDetails": [
+                                {
+                                    "actionDetailId": "ASB.1.1.a",
+                                    "actionDetailDescription": "Clear and concise identification of signaler's panel (no abbreviations used)",
+                                    "choice": "N/C",
+                                    "comment": "action detail 1.1.a comment"
+                                }
+                            ]
+                        },
+                        {
+                            "actionId": "ASB.1.2",
+                            "actionDescription": "Confirms ASB details",
+                            "actionDetails": [
+                                {
+                                    "actionDetailId": "ASB.1.2.a",
+                                    "actionDetailDescription": "Protection Officer Name",
+                                    "choice": "N/A",
+                                    "comment": "action detail 1.2.a comment"
+                                },
+                                {
+                                    "actionDetailId": "ASB.1.2.b",
+                                    "actionDetailDescription": "Protection Officer Contact details",
+                                    "choice": "N/A",
+                                    "comment": "action detail 1.2.b comment"
+                                },
+                                {
+                                    "actionDetailId": "ASB.1.2.c",
+                                    "actionDetailDescription": "Safeworking Designation",
+                                    "choice": "N/A",
+                                    "comment": "action detail 1.2.c comment"
+                                },
+                                {
+                                    "actionDetailId": "ASB.1.2.d",
+                                    "actionDetailDescription": "Type of work",
+                                    "choice": "N/A",
+                                    "comment": "action detail 1.2.d comment"
+                                },
+                                {
+                                    "actionDetailId": "ASB.1.2.e",
+                                    "actionDetailDescription": "Planned Time Duration",
+                                    "choice": "N/A",
+                                    "comment": "action detail 1.2.e comment"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "assessmentRatingId": "ASB.2",
+                    "assessmentRatingDescription": "Authorisation for Absolute Signal Blocking",
+                    "assessmentRating": "88",
+                    "assessmentRatingComment": "ABS.2 Comment",
+                    "actions": [
+                        {
+                            "actionId": "ASB.2.1",
+                            "actionDescription": "Authorisation of ASB granted",
+                            "actionDetails": [
+                                {
+                                    "actionDetailId": "ASB.2.1.a",
+                                    "actionDetailDescription": "Confirms PO accurately repeated back Section 3 and 4",
+                                    "choice": "N/A",
+                                    "comment": "action detail 2.1.a comment"
+                                },
+                                {
+                                    "actionDetailId": "ASB.2.1.b",
+                                    "actionDetailDescription": "Confirms the time ASB authorised",
+                                    "choice": "N/A",
+                                    "comment": "action detail 2.1.b comment"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "assessmentId": "DM",
+            "assessmentDescription": "Degraded Mode & Safety Critical Communications",
+            "references": [
+                "NWT 308 Absolute Signal Blocking",
+                "NPR 703 Using Absolute Signal Blocking",
+                "NRF 018 Absolute Signal Blocking (ASB)",
+                "NS0 919 Safety Critical Communication",
+                "NGE 204 Network Communication"
+            ],
+            "managerEvaluation": {
+                "managerName": "Michael Li",
+                "evaluationDate": "2012-04-23T18:25:43.511Z",
+                "additionalComments": "string",
+                "goals": "My goals"
+            },
+            "assessmentRatings": [
+                {
+                    "assessmentRatingId": "DM.1",
+                    "assessmentRatingDescription": "Degraded Mode & Safety Critical Information Communications",
+                    "assessmentRating": "99",
+                    "assessmentRatingComment": "DM.1 Comment",
+                    "actions": [
+                        {
+                            "actionId": "DM.1.1",
+                            "actionDescription": "Start of Communication",
+                            "actionDetails": [
+                                {
+                                    "actionDetailId": "DM.1.1.a",
+                                    "actionDetailDescription": "Receiver starts communications with the sender's call sign first, and the receiver's call sign second.",
+                                    "choice": "N/C",
+                                    "comment": "action detail 1.1.a comment"
+                                },
+                                {
+                                    "actionDetailId": "DM.1.1.b",
+                                    "actionDetailDescription": "The sender starts communications with the receivers call sign first, and the sender's call sign second.  ",
+                                    "choice": "N/C",
+                                    "comment": "action detail 1.1.b  comment"
+                                }
+                            ]
+                        },
+                        {
+                            "actionId": "DM.1.2",
+                            "actionDescription": "Communicate Safety Critical Message",
+                            "actionDetails": [
+                                {
+                                    "actionDetailId": "DM.1.2.a",
+                                    "actionDetailDescription": "Sender advises of incident/altered working/service disruption or requests information",
+                                    "choice": "N/A",
+                                    "comment": "action detail 1.2.a comment"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,21 @@
+<div *ngIf="employeeAssessment">
+
+	<form [formGroup]="employeeAssessmentFormGroup" (ngSubmit)="onSubmit(employeeAssessmentFormGroup.value)">
+
+		<app-employee [employeeAssessment]="employeeAssessment" [employee]="employeeAssessment.employee"></app-employee>
+		<br>
+		<tabset>
+			<tab *ngFor="let assessment of employeeAssessment.assessments" heading="{{assessment.assessmentId}}">
+				<app-assessment [assessment]="assessment" [assessmentsFormArray]="employeeAssessmentFormGroup.controls.assessments"></app-assessment>
+			</tab>
+		</tabset>
+
+		<br><br>
+		<div class="button"><button type="submit">Save</button></div>
+
+	</form>
+
+
+	Form! {{employeeAssessmentFormGroup.value|json}}
+	
+</div>

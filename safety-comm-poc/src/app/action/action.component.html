@@ -1,0 +1,10 @@
+<!--
+actions: {{actions}}
+actions: {{actionsFormArray}}
+-->
+
+<div [formGroup]="actionFormGroup">
+	<div *ngFor="let actionDetail of action.actionDetails; let actionIndex=index">
+		<app-action-detail [actionDetail]="actionDetail" [actionDetailsFormArray]="actionFormGroup.controls.actionDetails" actionIndex="{{action.actionDetails.length>2 ? actionIndex: -1}}"></app-action-detail>
+	</div>
+</div>

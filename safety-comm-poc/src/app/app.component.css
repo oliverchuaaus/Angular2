@@ -1,0 +1,12 @@
+.container{
+    border: 2px rgb(244, 155, 51) solid;
+    background-color:white;
+}
+body{
+    background-color:lightgray;
+}
+.title{
+    font-family: sans-serif;
+    font-size: 24px;
+    color: rgb(244, 155, 51);
+}

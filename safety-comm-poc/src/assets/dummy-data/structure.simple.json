@@ -1,0 +1,41 @@
+{
+    "assessments": [
+        {
+            "assessmentType": "ASB",
+            "assessmentDescription": "Absolute Signal Blocking",
+            "references": [],
+            "assessmentRatings": [
+                {
+                    "assessmentRatingId": "ASB.1",
+                    "assessmentRatingDescription": "Request for Absolute Signal Blocking",
+                    "actions": [
+                        {
+                            "actionId": "ASB.1.1",
+                            "action": "Start of Communication",
+                            "actionDetails": [
+                                {
+                                    "actionDetailId": "ASB.1.1.a",
+                                    "actionDetail": "Clear and concise identification of signaler's panel (no abbreviations used)"
+                                }
+                            ]
+                        },
+                        {
+                            "actionId": "ASB.1.2",
+                            "action": "Confirms ASB details",
+                            "actionDetails": [
+                                {
+                                    "actionDetailId": "ASB.1.2.a",
+                                    "actionDetail": "a) Protection Officer Name"
+                                },
+                                {
+                                    "actionDetailId": "ASB.1.2.b",
+                                    "actionDetail": "b) Protection Officer Contact details"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

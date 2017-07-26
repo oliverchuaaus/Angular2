@@ -1,0 +1,13 @@
+<div class="row" [formGroup]="actionDetailFormGroup">
+	<div class="col-md-5 action-detail">
+		{{getLetter(actionIndex)}} {{actionDetail.actionDetailDescription}}
+	</div>
+	<div class="col-md-3">
+		<label class="radio-inline"><input type="radio" id="{{actionDetail.actionDetailId}}optradio" value="C" formControlName="choice">C</label>
+		<label class="radio-inline"><input type="radio" id="{{actionDetail.actionDetailId}}optradio" value="N/C" formControlName="choice">N/C</label>
+		<label class="radio-inline"><input type="radio" id="{{actionDetail.actionDetailId}}optradio" value="N/A" formControlName="choice">N/A</label>
+	</div>
+	<div class="col-md-4">
+		<textarea class="form-control comment" rows="1" id="{{actionDetail.choice}}comment" formControlName="comment"></textarea>
+	</div>
+</div>
