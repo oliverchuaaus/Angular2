@@ -1,0 +1,6 @@
+<form [formGroup]="formGroup">
+    <label for="bday">Birthday</label>
+	<p-calendar id="bday" dateFormat="dd/mm/yy" formControlName="birthday" [monthNavigator]="true" [yearNavigator]="true"  [showIcon]="true" yearRange="1900:2030"></p-calendar>
+</form>
+
+{{formGroup.value|json}}

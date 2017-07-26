@@ -1,0 +1,13 @@
+{
+  "name": "Kris",
+  "addresses": [
+    {
+      "street": "Chandos",
+      "postcode": "2131"
+    },
+    {
+      "street": "Hampstead",
+      "postcode": "2140"
+    }    
+  ]
+}
