@@ -1,1 +1,0 @@
-{"version":3,"file":"SelectedProductsComponent.js","sourceRoot":"","sources":["SelectedProductsComponent.ts"],"names":[],"mappings":";;;;;;;AAAA,sCAAkD;AAalD,IAAa,yBAAyB;IAAtC;IACA,CAAC;IAAD,gCAAC;AAAD,CAAC,AADD,IACC;AADY,yBAAyB;IAVrC,gBAAS,CAAC;QACT,QAAQ,EAAE,mBAAmB;QAC7B,MAAM,EAAE,CAAC,kBAAkB,CAAC;QAC5B,QAAQ,EAAE,kLAKT;KACF,CAAC;GACW,yBAAyB,CACrC;AADY,8DAAyB"}
