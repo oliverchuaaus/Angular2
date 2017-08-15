@@ -4,15 +4,12 @@ import { Component } from '@angular/core';
   template: `
   <h1>My First Angular App</h1>
 
-  <parent2></parent2>
-  <router-outlet></router-outlet>
 
-  
+    <mission-control></mission-control>
 
-<!--  
-  <table-demo></table-demo>
-  <mission-control></mission-control>
 
+
+ <!--   
   <parent></parent>
   <router-outlet></router-outlet>
 
