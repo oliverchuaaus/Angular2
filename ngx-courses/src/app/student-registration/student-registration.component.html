@@ -1,0 +1,8 @@
+My courses
+<ul>
+  <li *ngFor="let course of courseList">
+    {{course.courseName}} <button *ngIf="studentRegistered(course)" (click)="deregister(course)">Deregister</button>
+    <button *ngIf="!studentRegistered(course)" (click)="register(course)">Register</button>
+
+  </li>
+</ul>

@@ -1,0 +1,25 @@
+<div class="row" *ngFor="let article of newsArticles">
+
+  <div class="col-md-1">
+    <p><i class="fa fa-camera fa-4x"></i>
+    </p>
+
+    <p>{{article.date | date}}</p>
+  </div>
+  <div class="col-md-6">
+    <h3>{{article.title}}</h3>
+
+    <p>by {{article.author}}
+    </p>
+
+    <p>{{article.shortDescription}}</p>
+
+    <button type="button" class="btn btn-primary" (click)="article.expand = !article.expand">Read More</button>
+    <div [collapse]="!article.expand" class="card card-block card-header">
+      <div class="">{{article.fullArticle}}</div>
+    </div>
+
+  </div>
+    <hr>
+
+</div>

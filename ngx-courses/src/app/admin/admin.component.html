@@ -1,0 +1,23 @@
+Courses
+<ul>
+
+  <li *ngFor="let course of courseList">
+    {{course.courseName}}
+    <ul>
+      Students:
+      <li *ngFor="let student of course.studentList">
+        {{student.studentName}}
+      </li>
+    </ul>
+
+    <app-course *ngIf="teacherList" [course]="course" [teacherList]="teacherList"></app-course>
+    <br>
+  </li>
+  <br>
+</ul>
+
+
+<form [formGroup]="addCourseFG" (ngSubmit)="addCourse(addCourseFG.value)">
+  Course Name: <input formControlName="courseName">
+  <button type=Submit>Add New Course</button>
+</form>

@@ -1,0 +1,11 @@
+My courses
+<ul>
+  <li *ngFor="let course of courseList">
+      {{course.courseName}}
+      <ul>
+      Students:
+      <li *ngFor="let student of course.studentList">
+        {{student.studentName}}  
+      </li></ul>
+  </li>
+</ul>

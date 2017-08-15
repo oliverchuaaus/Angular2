@@ -1,0 +1,9 @@
+<form [formGroup]="updateCourseFG" (ngSubmit)="updateCourse(updateCourseFG.value)">
+  Course Name: <input formControlName="courseName"> Active: <input type="checkbox" formControlName="active"> Teacher:
+  <select
+    formControlName="teacher">
+    <option *ngFor="let ateacher of teacherList" [ngValue]="ateacher">{{ateacher.teacherName}}</option>
+    </select>
+
+    <button type="submit">Update</button>
+</form>
