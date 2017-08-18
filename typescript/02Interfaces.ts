@@ -24,6 +24,16 @@ var candy = {
   calories: 200
 }
 
-//speakb(candy);
+//speakb(candy); 
 //error: Argument of type '{ nmae: string; calories: number; } is not assignable to parameter of type 'Food'. 
 //Property 'name' is missing in type '{ nmae: string; calories: number; }'.
+//Wrong names, missing fields not allowed
+
+
+//How about extra fields? Allowed
+var ice_cream_b = {
+  name: "ice cream", 
+  calories: 200,
+  extra: 100
+}
+speakb(ice_cream_b);
