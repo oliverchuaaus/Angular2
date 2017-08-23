@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginService } from '../login/login.service';
+import { AuthService } from '../auth/auth.service';
+import { AwsRolesService } from '../auth/aws-roles.service';
+
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-main',
@@ -8,17 +11,23 @@ import { LoginService } from '../login/login.service';
 })
 export class MainComponent implements OnInit {
 
-  constructor(public loginService: LoginService) { }
+  constructor(public authService: AuthService, private router: Router, public rolesService: AwsRolesService) { }
+  isLoggedIn:boolean;
 
   ngOnInit() {
+    this.authService.authStatusChanged.subscribe(
+      (isLoggedIn: boolean) => this.isLoggedIn = isLoggedIn
+    );    
   }
-
-  isLoggedIn(): boolean {
-    return this.loginService.getUsername() != null;
-  }  
 
   hasRole(role: string) {
-    return this.isLoggedIn() && this.loginService.hasRole(role);
+    return this.isLoggedIn && this.rolesService.hasRole(role);
   }
+
+  onLogout() {
+    this.authService.logout();
+    this.router.navigate(["/login"]);
+
+  }  
 
 }

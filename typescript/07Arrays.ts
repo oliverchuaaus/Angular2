@@ -45,4 +45,3 @@ strings.reverse();
 strings.splice(1, 0, 'Adam', 'Eve');
 console.log('after splice: ' + strings);
 console.log('after sort: ' + strings.sort());
-

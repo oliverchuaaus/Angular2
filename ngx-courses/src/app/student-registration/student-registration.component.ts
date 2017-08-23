@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CourseService, Course } from '../course.service';
-import { LoginService } from '../login/login.service';
+import { CourseService, Course } from '../course/course.service';
+import { AuthService } from '../auth/auth.service';
 
 @Component({
   selector: 'app-student-registration',
@@ -10,7 +10,7 @@ import { LoginService } from '../login/login.service';
 export class StudentRegistrationComponent implements OnInit {
 
   courseList: Array<Course>;
-  constructor(public courseService: CourseService, public loginService: LoginService) { }
+  constructor(public courseService: CourseService, public authService: AuthService) { }
 
 
   ngOnInit() {
@@ -29,7 +29,7 @@ export class StudentRegistrationComponent implements OnInit {
   }
 
   studentRegistered(course:Course): boolean {
-    let studentId: string = this.loginService.getUsername();
+    let studentId: string = this.authService.getUsername();
     let found = false;
     course.studentList.forEach(student => {
       if (student.studentId==studentId){
@@ -40,7 +40,7 @@ export class StudentRegistrationComponent implements OnInit {
   }
 
   register(course:Course){
-    let studentId: string = this.loginService.getUsername();
+    let studentId: string = this.authService.getUsername();
     this.courseService.registerCourse(course, studentId).subscribe(
       courseList => {
         this.courseList = courseList;
@@ -51,7 +51,7 @@ export class StudentRegistrationComponent implements OnInit {
   }
 
   deregister(course:Course){
-    let studentId: string = this.loginService.getUsername();
+    let studentId: string = this.authService.getUsername();
     this.courseService.deregisterCourse(course, studentId).subscribe(
       courseList => {
         this.courseList = courseList;

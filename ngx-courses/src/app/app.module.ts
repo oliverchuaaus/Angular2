@@ -14,7 +14,7 @@ import { CollapseModule } from 'ngx-bootstrap';
 
 import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
-import { LoginComponent } from './login/login.component';
+import { SigninComponent } from './signin/signin.component';
 import { StudentComponent } from './student/student.component';
 import { StudentRegistrationComponent } from './student-registration/student-registration.component';
 import { TeacherComponent } from './teacher/teacher.component';
@@ -30,19 +30,21 @@ import { FaqComponent } from './faq/faq.component';
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 
-import { LoginService, LoggedInGuard } from './login/login.service';
+import { AuthGuard } from './auth/auth-guard.service';
+import { AuthService } from './auth/auth.service';
 import { NewsService } from './news/news.service';
-import { CourseService } from './course.service';
+import { CourseService } from './course/course.service';
 import { CourseComponent } from './course/course.component';
-import { RegisterComponent } from './register/register.component';
+import { SignupComponent } from './signup/signup.component';
+import { AwsRolesService } from './auth/aws-roles.service';
 
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
-  { path: 'login', component: LoginComponent },
+  { path: 'login', component: SigninComponent },
   { path: 'logout', component: LogoutComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'register', component: RegisterComponent },
+  { path: 'register', component: SignupComponent },
   { path: 'about', component: AboutComponent },
   { path: 'faq', component: FaqComponent },
   { path: 'pricing', component: PricingComponent },
@@ -50,17 +52,17 @@ const routes: Routes = [
   { path: 'welcome', component: WelcomeComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'news', component: NewsComponent },
-  { path: 'student', component: StudentComponent, pathMatch: 'full', canActivate: [LoggedInGuard] },
-  { path: 'student-registration', component: StudentRegistrationComponent, pathMatch: 'full', canActivate: [LoggedInGuard] },
-  { path: 'teacher', component: TeacherComponent, pathMatch: 'full', canActivate: [LoggedInGuard] },
-  { path: 'admin', component: AdminComponent, pathMatch: 'full', canActivate: [LoggedInGuard] },
+  { path: 'student', component: StudentComponent, pathMatch: 'full', canActivate: [AuthGuard] },
+  { path: 'student-registration', component: StudentRegistrationComponent, pathMatch: 'full', canActivate: [AuthGuard] },
+  { path: 'teacher', component: TeacherComponent, pathMatch: 'full', canActivate: [AuthGuard] },
+  { path: 'admin', component: AdminComponent, pathMatch: 'full', canActivate: [AuthGuard] },
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
-    LoginComponent,
+    SigninComponent,
     StudentComponent,
     TeacherComponent,
     AdminComponent,
@@ -75,13 +77,13 @@ const routes: Routes = [
     HomeComponent,
     StudentRegistrationComponent,
     CourseComponent,
-    RegisterComponent
+    SignupComponent
   ],
   imports: [
     BrowserModule, RouterModule.forRoot(routes), HttpModule, FormsModule, ReactiveFormsModule,
     CollapseModule.forRoot()
   ],
-  providers: [LoginService, LoggedInGuard, NewsService, CourseService,
+  providers: [AuthService, AuthGuard, NewsService, CourseService, AwsRolesService,
     { provide: LocationStrategy, useClass: HashLocationStrategy }
 
   ],

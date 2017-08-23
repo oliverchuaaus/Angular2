@@ -14,21 +14,21 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse navbar-ex1-collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li *ngIf="!isLoggedIn()"><a [routerLink]="['/services']">Services</a></li>
-        <li *ngIf="!isLoggedIn()"><a [routerLink]="['/pricing']">Pricing Table</a></li>
-        <li *ngIf="!isLoggedIn()"><a [routerLink]="['/about']">About</a></li>
-        <li *ngIf="!isLoggedIn()"><a [routerLink]="['/faq']">FAQ</a></li>
-        <li *ngIf="!isLoggedIn()"><a [routerLink]="['/contact']">Contact</a></li>
-        <li *ngIf="!isLoggedIn()"><a [routerLink]="['/news']">News</a></li>
-        <li *ngIf="!isLoggedIn()"><a [routerLink]="['/register']">Register</a></li>
+        <li *ngIf="!isLoggedIn"><a [routerLink]="['/services']">Services</a></li>
+        <li *ngIf="!isLoggedIn"><a [routerLink]="['/pricing']">Pricing Table</a></li>
+        <li *ngIf="!isLoggedIn"><a [routerLink]="['/about']">About</a></li>
+        <li *ngIf="!isLoggedIn"><a [routerLink]="['/faq']">FAQ</a></li>
+        <li *ngIf="!isLoggedIn"><a [routerLink]="['/contact']">Contact</a></li>
+        <li *ngIf="!isLoggedIn"><a [routerLink]="['/news']">News</a></li>
+        <li *ngIf="!isLoggedIn"><a [routerLink]="['/register']">Register</a></li>
 
         <li *ngIf="hasRole('student')"><a [routerLink]="['/student']">Student</a></li>
         <li *ngIf="hasRole('student')"><a [routerLink]="['/student-registration']">Student Registration</a></li>
         <li *ngIf="hasRole('teacher')"><a [routerLink]="['/teacher']">Teacher</a></li>
         <li *ngIf="hasRole('admin')"><a [routerLink]="['/admin']">Admin</a></li>
 
-        <li *ngIf="!isLoggedIn()"><a [routerLink]="['/login']">Login</a></li>
-        <li *ngIf="isLoggedIn()"><a [routerLink]="['/logout']">Logout</a></li>
+        <li *ngIf="!isLoggedIn"><a [routerLink]="['/login']">Login</a></li>
+        <li *ngIf="isLoggedIn"><a (click)="onLogout()">Logout</a></li>
       </ul>
     </div>
     <!-- /.navbar-collapse -->

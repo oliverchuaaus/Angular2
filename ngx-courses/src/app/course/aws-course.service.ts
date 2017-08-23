@@ -2,11 +2,11 @@ import { Injectable, ViewChild } from '@angular/core';
 import { CanActivate, Router, ActivatedRoute, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { Headers, Http } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
-import { URL } from './constants';
+import { URL } from '../constants';
 import 'rxjs/add/operator/map';
 
 @Injectable()
-export class CourseService {
+export class AwsCourseService {
   private url: string = URL;
   private headers = new Headers({ 'Content-Type': 'application/json' });
 

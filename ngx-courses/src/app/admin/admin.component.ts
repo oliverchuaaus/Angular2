@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
-import { CourseService, Course, Teacher } from '../course.service';
-import { LoginService } from '../login/login.service';
+import { CourseService, Course, Teacher } from '../course/course.service';
+import { AuthService } from '../auth/auth.service';
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
@@ -12,7 +12,7 @@ export class AdminComponent implements OnInit {
   courseList: Array<Course>;
   addCourseFG: FormGroup;
   teacherList: Array<Teacher>;
-  constructor(public courseService: CourseService, public loginService: LoginService, public fb: FormBuilder) {
+  constructor(public courseService: CourseService, public authService: AuthService, public fb: FormBuilder) {
     this.addCourseFG = fb.group({ courseName: '' });
   }
 

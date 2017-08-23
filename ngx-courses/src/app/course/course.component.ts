@@ -1,8 +1,8 @@
 import { Component, OnInit, Input, AfterContentChecked } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
-import { CourseService, Course, Teacher } from '../course.service';
-import { LoginService } from '../login/login.service';
+import { CourseService, Course, Teacher } from '../course/course.service';
+import { AuthService } from '../auth/auth.service';
 
 @Component({
   selector: 'app-course',
@@ -14,7 +14,7 @@ export class CourseComponent implements OnInit, AfterContentChecked {
   @Input() teacherList: Array<Teacher>;
   updateCourseFG: FormGroup;
 
-  constructor(public courseService: CourseService, public loginService: LoginService, public fb: FormBuilder) {
+  constructor(public courseService: CourseService, public authService: AuthService, public fb: FormBuilder) {
   }
 
 

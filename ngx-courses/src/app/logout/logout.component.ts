@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginService } from '../login/login.service';
+import { AuthService } from '../auth/auth.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,14 +9,14 @@ import { Router } from '@angular/router';
 })
 export class LogoutComponent implements OnInit {
 
-  constructor(public loginService: LoginService, private router: Router) { }
+  constructor(public authService: AuthService, private router: Router) { }
 
   ngOnInit() {
-    if (this.loginService.isLoggedIn()) {
-      this.loginService.logout();
-      this.router.navigate(["/login"]);
-    }
+  }
 
+  ngAfterViewInit() {
+      this.authService.logout();
+      this.router.navigate(["/login"]);
   }
 
 }

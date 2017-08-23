@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CourseService, Course } from '../course.service';
-import { LoginService } from '../login/login.service';
+import { CourseService, Course } from '../course/course.service';
+import { AuthService } from '../auth/auth.service';
 
 @Component({
   selector: 'app-student',
@@ -9,10 +9,10 @@ import { LoginService } from '../login/login.service';
 })
 export class StudentComponent implements OnInit {
   courseList: Array<Course>;
-  constructor(public courseService: CourseService, public loginService: LoginService) { }
+  constructor(public courseService: CourseService, public authService: AuthService) { }
 
   ngOnInit() {
-    let studentId: string = this.loginService.getUsername();
+    let studentId: string = this.authService.getAuthenticatedUser().getUsername();
     this.courseService.getStudentCourseList(studentId).subscribe(
       courseList => {
         this.courseList = courseList;
