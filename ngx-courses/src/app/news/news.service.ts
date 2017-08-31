@@ -2,11 +2,11 @@ import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
-import { URL } from '../constants';
+import { awsURL } from '../constants';
 
 @Injectable()
 export class NewsService {
-  private url: string = URL;
+  private url: string = awsURL;
 
   constructor(public http: Http, ) { }
 

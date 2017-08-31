@@ -7,13 +7,13 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { Subject } from 'rxjs/Subject';
 
 import { AuthService } from '../auth/auth.service';
-import { URL, awsURL } from '../constants';
+import { awsURL } from '../constants';
 import { Role, UserRole } from './user.model';
 import { Subscription } from 'rxjs/Subscription';
 
 @Injectable()
 export class AwsRolesService {
-    private url: string = URL + "usermanagement/";
+    private url: string = awsURL + "usermanagement/";
     private headers = new Headers({ 'Content-Type': 'application/json' });
     dataEdited = new BehaviorSubject<boolean>(false);
     dataIsLoading = new BehaviorSubject<boolean>(false);
